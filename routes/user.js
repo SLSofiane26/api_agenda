@@ -3,9 +3,7 @@ let route = express.Router();
 let auth = require("../middleware/auth");
 let userSchema = require("../models/user");
 let profilSchema = require("../models/profile");
-let stripe = require("stripe")(
-  "sk_test_51JlEeSKFhUTtY2eIZVCwrKCnMxf7QLCK2E2242Gr2SchFOUevzpkImaPY9LIQGetHAfJr7YaVYDM1jINIuKyilhB00N7CBBDr5"
-);
+
 
 route.post("/sub", async (req, res) => {
   try {
@@ -52,9 +50,6 @@ route.post("/sub", async (req, res) => {
 });
 
 route.get("/key", async (req, res) => {
-  res.json(
-    "pk_test_51JlEeSKFhUTtY2eItaweixIrXMWxDo6BQfJzgrBtRsmFLG9KAMc7qgMtISDKrArCNjHTjKr5x1prIIb8VuJDcKOD00uRRcBFpB"
-  );
 });
 
 route.get("/user", auth, async (req, res) => {
